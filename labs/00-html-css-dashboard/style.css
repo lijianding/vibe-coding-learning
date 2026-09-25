@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f6f7f9;
+}
+
+.topbar {
+  min-height: 64px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  padding: 8px 14px;
+}
+
+.layout {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+.sidebar {
+  width: 220px;
+  flex: 0 0 220px;
+  padding: 20px;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 12px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.sidebar a:hover {
+  background: #f3f4f6;
+}
+
+.content {
+  min-width: 0;
+  flex: 1;
+  padding: 24px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card,
+.panel {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.card p {
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.panel-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panel-header h1 {
+  margin: 0 0 16px;
+}
+
+.panel-header label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.panel-header input {
+  padding: 8px 10px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f3f4f6;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
