@@ -1,102 +1,286 @@
 # 实践路线：从“看懂”到“会做”
 
-本仓库从现在开始采用四层学习结构：
+本仓库现在采用四层学习结构：
 
 ```text
 教材正文 docs/
 ↓
 可运行实验 labs/
 ↓
-练习与答案 exercises/
+练习与参考答案
 ↓
 毕业项目 projects/
 ```
 
 ## 学习规则
 
-每一章都按下面顺序：
+每一章按下面顺序：
 
-1. 先阅读对应 `docs/` 章节。
-2. 不看答案，先完成 `exercises/`。
-3. 运行 `labs/` 中的代码。
-4. 修改代码制造错误，再尝试修复。
-5. 对照 `solutions/` 或同目录 solution 文件。
-6. 用 Git Commit 保存学习结果。
-7. 最后进入阶段项目。
-
----
-
-## 阶段一：基础语言
-
-### Web / HTML / CSS
-- 实验：`labs/html-css-dashboard/`
-- 目标：手工完成一个后台 Dashboard，不使用 React。
-
-### JavaScript
-- 实验：`labs/javascript-basics/`
-- 目标：掌握数组、函数、异步、错误处理。
-
-### TypeScript
-- 实验：`labs/typescript-basics/`
-- 目标：掌握 interface、union、narrowing、generic、unknown。
+1. 阅读对应 `docs/` 教材。
+2. 进入对应 `labs/`。
+3. 先做练习，不看答案。
+4. 运行代码并观察结果。
+5. 主动制造错误，再自己排查。
+6. 对照参考答案。
+7. 用 Git Commit 保存学习成果。
+8. 完成章节验收后进入下一章。
 
 ---
 
-## 阶段二：服务端与数据
+# 实验路线
 
-### HTTP API
-- 实验：`labs/http-api/`
-- 目标：使用 Node.js 原生 HTTP 模块理解 Request/Response。
+## Lab 00：HTML/CSS Dashboard
 
-### PostgreSQL
-- 实验：`labs/postgresql/`
-- 目标：完成 SaaS schema、seed、查询、约束、索引。
+路径：
 
----
+`labs/00-html-css-dashboard/`
 
-## 阶段三：React / Next.js / Supabase
+对应：
 
-这一阶段建议在本地创建真实 Next.js 项目，并按照：
+- Web 基础
+- HTML/CSS
 
-`projects/medical-implementation-saas/README.md`
+目标：
 
-逐个里程碑实现。
-
----
-
-## 阶段四：测试与安全
-
-每个 Feature 必须至少补：
-
-- Unit Test
-- Integration Test
-- 一条 Deny Case
-- 一条跨租户测试
-- Git Diff Review
+- semantic HTML
+- flex
+- grid
+- responsive
+- table/form
+- accessibility basics
 
 ---
 
-## 阶段五：Production
+## Lab 01：JavaScript
 
-最终必须完成：
+路径：
 
-- Docker
-- GitHub Actions
-- Staging
-- Monitoring
-- Backup
-- Restore Drill
-- Rollback
+`labs/01-javascript/`
+
+目标：
+
+- 变量
+- object/array
+- map/filter/find
+- some/every/reduce
+- function
+- async/await
+- error handling
 
 ---
 
-## Git 学习记录建议
+## Lab 02：TypeScript
 
-每完成一个实验：
+路径：
 
-```bash
-git add .
-git commit -m "learn: complete javascript array exercises"
+`labs/02-typescript/`
+
+目标：
+
+- interface
+- union
+- narrowing
+- generic
+- unknown
+- strict mode
+
+---
+
+## Lab 03：PostgreSQL
+
+路径：
+
+`labs/03-postgresql/`
+
+目标：
+
+- schema
+- seed
+- query
+- FK
+- constraint
+- index
+- aggregation
+- tenant-aware data model
+
+---
+
+## Lab 04：React Dashboard
+
+路径：
+
+`labs/04-react-dashboard/`
+
+目标：
+
+- component
+- props
+- state
+- event
+- filter
+- controlled form
+- render states
+
+---
+
+## Lab 05：Next.js Project Console
+
+路径：
+
+`labs/05-nextjs-project-console/`
+
+目标：
+
+- App Router
+- Server Component
+- Client Component
+- Route
+- data access
+- form mutation
+- loading/error
+
+---
+
+## Lab 06：Supabase Multi-Tenant
+
+路径：
+
+`labs/06-supabase-multitenant/`
+
+目标：
+
+- multi-tenant schema
+- RLS
+- policies
+- allow/deny cases
+- cross-tenant tests
+
+---
+
+## Lab 07：HTTP API
+
+路径：
+
+`labs/07-http-api/`
+
+目标：
+
+- Request/Response
+- Method
+- URL
+- Status
+- JSON
+- validation
+- error contract
+
+---
+
+## Lab 08：Testing + Security
+
+路径：
+
+`labs/08-testing-security/`
+
+目标：
+
+- unit test
+- permission tests
+- deny cases
+- cross-tenant cases
+- IDOR
+- mass assignment
+- XSS thinking
+
+---
+
+## Lab 09：Production Engineering
+
+路径：
+
+`labs/09-production-engineering/`
+
+目标：
+
+- Dockerfile
+- CI
+- backup/restore
+- incident runbook
+- production thinking
+
+---
+
+# 毕业项目
+
+路径：
+
+`projects/medical-implementation-saas/`
+
+项目采用 Milestone 方式实现：
+
+```text
+Initialize
+↓
+Static UI
+↓
+Database
+↓
+Authentication
+↓
+CRUD
+↓
+Multi-Tenant
+↓
+RBAC
+↓
+RLS
+↓
+Task/Issue
+↓
+Audit
+↓
+Storage
+↓
+Testing
+↓
+Security
+↓
+CI/CD
+↓
+Staging
+↓
+Production
+↓
+Monitoring/Restore
 ```
 
-不要把多个章节混在一次 Commit。
+---
+
+# 每次实验的 Git 流程
+
+```bash
+git status
+git diff
+git add .
+git commit -m "learn: complete lab xx"
+```
+
+每个 Lab 独立 Commit。
+
+---
+
+# 自我验收标准
+
+不要只问：
+
+> 我看懂了吗？
+
+而要问：
+
+- 我能运行吗？
+- 我能改吗？
+- 我能解释为什么吗？
+- 我能制造一个错误并修复吗？
+- 我能写测试证明它正确吗？
+- 我能指出安全边界吗？
+
+满足这些，才算真正掌握。
