@@ -294,3 +294,29 @@ Commit
 # 学习原则
 
 > AI 可以帮你高效地“写”，但你必须学会判断“写得对不对、安不安全、能不能上线”。
+
+
+---
+
+# 实践与实验
+
+除了教材正文，本仓库还包含可运行实验和毕业项目：
+
+- [实践总路线](PRACTICE.md)
+- [Labs 实验中心](labs/README.md)
+- [毕业项目实施手册](projects/medical-implementation-saas/README.md)
+
+推荐顺序：
+
+```text
+读 docs
+→ 做 labs
+→ 完成 exercises
+→ 对照 solutions
+→ Git Commit
+→ 再进入下一章
+```
+
+真正掌握的标准不是“看懂”，而是：
+
+> 能运行、能修改、能解释、能测试、能发现安全边界。
