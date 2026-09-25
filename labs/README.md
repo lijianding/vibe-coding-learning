@@ -1,178 +1,217 @@
-# Hands-on Labs：可运行实验区
+# Labs：可运行实验中心
 
-> 教材负责解释“是什么、为什么”；Labs 负责让你亲手验证“它到底怎么工作”。
+这里不是代码展示区，而是课程的“实验室”。
 
-## 使用原则
-
-每个 Lab 都按下面顺序：
+学习顺序：
 
 ```text
-阅读对应章节
+docs 教材
 ↓
-运行示例
+labs 实验
 ↓
-先做 exercises
+exercises
 ↓
-自己调试
+solution
 ↓
-最后再看 solutions
+自己修改
 ↓
-修改实验
+测试
 ↓
-Git Commit
+Commit
 ```
-
-不要先看答案。
-
----
 
 ## 实验目录
 
-### Lab 01 — JavaScript
-对应：
-[05 JavaScript](../docs/05-javascript.md)
-
-路径：
-`01-javascript/`
-
-重点：
-
-- object / array
-- map / filter / find
-- function
-- async / await
-- Promise
-- error handling
-- mutation / immutability
-
-运行：
-
-```bash
-cd labs/01-javascript
-node 01-basics.js
-node 02-arrays.js
-node 03-async.js
-node exercises.js
-```
+| Lab | 内容 | 对应教材 |
+|---|---|---|
+| 00 | HTML/CSS Dashboard | 03-04 |
+| 01 | JavaScript | 05 |
+| 02 | TypeScript | 06 |
+| 03 | PostgreSQL | 09 |
+| 04 | React Dashboard | 10 |
+| 05 | Next.js Project Console | 11 |
+| 06 | Supabase Multi-Tenant | 12-13 |
+| 07 | HTTP API | 03/08/19 |
+| 08 | Testing + Security | 13-14 |
+| 09 | Production Engineering | 15/18 |
 
 ---
 
-### Lab 02 — TypeScript
-对应：
-[06 TypeScript](../docs/06-typescript.md)
+## Lab 00
 
-路径：
-`02-typescript/`
+`00-html-css-dashboard/`
 
-重点：
-
-- interface
-- union
-- optional / null
-- narrowing
-- generic
-- unknown
-- discriminated union
-
-运行：
-
-```bash
-cd labs/02-typescript
-npm install
-npm run check
-npm run start
-```
-
----
-
-### Lab 03 — PostgreSQL
-对应：
-[09 PostgreSQL](../docs/09-postgresql-database-design.md)
-
-路径：
-`03-postgresql/`
-
-重点：
-
-- schema
-- PK/FK
-- constraint
-- index
-- transaction
-- tenant
-- query
-- EXPLAIN
-
-使用本地 PostgreSQL、Supabase SQL Editor 或其他练习数据库。
-
-不要在生产数据库运行练习 SQL。
-
----
-
-### Lab 04 — React Dashboard
-对应：
-[10 React](../docs/10-react.md)
-
-路径：
-`04-react-dashboard/`
-
-一个可以运行的 Vite + React 小项目。
-
----
-
-### Lab 05 — Next.js Project Console
-对应：
-[11 Next.js](../docs/11-nextjs.md)
-
-路径：
-`05-nextjs-project-console/`
+静态后台页面。
 
 学习：
 
-- App Router
-- Server Component
-- Client Component
-- Route
-- Search Params
-- Data Access Layer
+- semantic HTML
+- flex/grid
+- responsive
+- form/table
 
 ---
 
-### Lab 06 — Supabase Multi-Tenant
-对应：
-[12 Supabase](../docs/12-supabase-auth-crud.md)
-[13 Authorization](../docs/13-rbac-multitenant-rls-audit.md)
+## Lab 01
 
-路径：
-`06-supabase-multitenant/`
+`01-javascript/`
+
+包含：
+
+- basics
+- arrays
+- async
+- exercises
+- solutions
+
+运行：
+
+```bash
+node 01-basics.js
+node 02-arrays.js
+node 03-async.js
+```
+
+---
+
+## Lab 02
+
+`02-typescript/`
+
+安装：
+
+```bash
+npm install
+```
+
+然后根据 README 完成 TypeScript 类型实验。
+
+---
+
+## Lab 03
+
+`03-postgresql/`
+
+包含：
+
+- schema
+- seed
+- queries
+- exercises
+- solutions
+
+重点是“设计数据库”，不只是写 SELECT。
+
+---
+
+## Lab 04
+
+`04-react-dashboard/`
+
+真正运行 React UI。
 
 重点：
 
-- organizations
-- memberships
-- projects
-- RLS
-- tenant isolation tests
+- Props
+- State
+- Events
+- Filters
+- Component boundaries
 
 ---
 
-## 学习进度
+## Lab 05
 
-使用：
+`05-nextjs-project-console/`
 
-[LEARNING-CHECKLIST.md](LEARNING-CHECKLIST.md)
+学习 Next.js 全栈边界。
 
-每完成一项自己打勾，并提交 Git：
+重点：
+
+- Server Component
+- Client Component
+- Routing
+- Data Layer
+
+---
+
+## Lab 06
+
+`06-supabase-multitenant/`
+
+这是 SaaS 安全核心实验。
+
+一定完成：
+
+- Org A
+- Org B
+- SELECT deny
+- UPDATE deny
+- DELETE deny
+- RLS policies
+
+---
+
+## Lab 07
+
+`07-http-api/`
+
+不用 Framework，从 Node 原生 HTTP 开始理解 API。
+
+包含：
+
+- starter
+- exercises
+- solution
+
+---
+
+## Lab 08
+
+`08-testing-security/`
+
+运行：
 
 ```bash
-git add .
-git commit -m "learn: complete javascript array exercises"
+npm install
+npm test
 ```
 
-## 最重要的规则
+重点：
 
-答案的价值不是“看懂”。
+- allow test
+- deny test
+- cross-tenant test
 
-真正有效的是：
+---
 
-> 先预测输出 → 再运行 → 再解释原因 → 再自己修改。
+## Lab 09
+
+`09-production-engineering/`
+
+模板：
+
+- Dockerfile
+- GitHub Actions
+- Restore Drill
+- Incident Runbook
+
+注意：
+
+`ci-example.yml` 是教学模板，不会自动启用 Workflow。
+
+---
+
+# 学习检查
+
+总检查表：
+
+`LEARNING-CHECKLIST.md`
+
+毕业项目：
+
+`../projects/medical-implementation-saas/README.md`
+
+实践总路线：
+
+`../PRACTICE.md`
