@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Implementation Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>Medical Implementation SaaS</strong>
+    </div>
+    <button type="button">New Project</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav aria-label="Primary">
+        <a href="#">Dashboard</a>
+        <a href="#">Projects</a>
+        <a href="#">Issues</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="metrics" aria-label="Project metrics">
+        <article class="card">
+          <h2>Active Projects</h2>
+          <p>12</p>
+        </article>
+
+        <article class="card">
+          <h2>Overdue Tasks</h2>
+          <p>5</p>
+        </article>
+
+        <article class="card">
+          <h2>Critical Issues</h2>
+          <p>2</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h1>Projects</h1>
+
+          <div>
+            <label for="project-search">Search</label>
+            <input
+              id="project-search"
+              type="search"
+              placeholder="Project name"
+            />
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Project</th>
+                <th scope="col">Status</th>
+                <th scope="col">Go Live</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hospital A HIS Upgrade</td>
+                <td><span class="badge">Implementing</span></td>
+                <td>2026-11-15</td>
+              </tr>
+              <tr>
+                <td>Hospital B Interface Project</td>
+                <td><span class="badge">Testing</span></td>
+                <td>2026-12-01</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
