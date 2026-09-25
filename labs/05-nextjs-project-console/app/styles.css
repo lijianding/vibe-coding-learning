@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui, sans-serif;
+  background: #f7f8fa;
+  color: #172033;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.eyebrow {
+  color: #6b7280;
+}
+
+select {
+  display: block;
+  margin-top: 6px;
+  padding: 8px;
+}
+
+li {
+  margin: 10px 0;
+}
