@@ -1,234 +1,414 @@
-# 17 AI Coding Prompt 模板
+# 17 AI Coding Prompt 手册
 
-这些 Prompt 用于“让 AI 可控地工作”，而不是一次生成整个系统。
+> Prompt 的目的不是“写得很长”，而是减少歧义、明确边界、让 AI 的修改可验证。
 
-## 1. 需求整理
+---
+
+## 一、通用 Prompt 模型
+
+推荐结构：
+
+```text
+ROLE
+CONTEXT
+CURRENT STATE
+TASK
+CONSTRAINTS
+SECURITY
+ACCEPTANCE CRITERIA
+TESTS
+OUTPUT FORMAT
+```
+
+---
+
+## 二、仓库理解
+
+```text
+不要修改代码。
+
+请阅读仓库并说明：
+1. 技术栈
+2. 目录结构
+3. 入口
+4. 数据库层
+5. Auth
+6. Permission
+7. 测试
+8. CI
+9. 关键风险
+
+对于不确定内容明确说“不确定”，不要猜。
+```
+
+---
+
+## 三、需求拆解
+
 ```text
 不要写代码。
 
-请把下面业务需求整理成软件需求规格，输出：
-1. 用户角色
-2. 使用场景
-3. 功能要求
-4. 业务规则
-5. 权限要求
-6. 数据要求
-7. 异常情况
-8. 验收标准
-9. 暂不实现内容
-
-如果有歧义，请明确列为“假设”。
-```
-
-## 2. 数据库设计
-```text
-不要写前端代码。
-
-根据需求设计数据库，输出：
-- 表
-- 字段
-- 类型
-- 主键
-- 外键
-- 唯一约束
-- 索引
-- organization_id 等租户字段
-- created_at / updated_at / deleted_at
-- 设计理由
-- 潜在数据一致性问题
-```
-
-## 3. 权限设计
-```text
-设计 RBAC 权限矩阵。
-
-请按角色列出：
-- READ
-- CREATE
-- UPDATE
-- DELETE
-- 特殊动作
-
-并额外检查：
-1. 跨租户访问
-2. 资源归属
-3. 管理员边界
-4. 前端与服务端权限是否一致
-```
-
-## 4. 开发前 Plan
-```text
-先阅读整个项目，不修改代码。
-
-我要实现：[功能]
+业务需求：
+[需求]
 
 请输出：
-1. 当前相关代码结构
-2. 实现方案
-3. 要修改的文件
-4. 是否需要数据库迁移
-5. 是否影响权限
-6. 是否新增 API
-7. 是否新增环境变量
-8. 测试方案
-9. 回滚方案
-10. 风险
+1. Actors
+2. Use Cases
+3. Business Rules
+4. Data
+5. Permission
+6. Edge Cases
+7. Error Cases
+8. Acceptance Criteria
+9. Out of Scope
+10. Open Questions
 ```
 
-## 5. 只实现一个 Feature
+---
+
+## 四、数据库设计
+
 ```text
-按照已确认计划，只实现：[功能]
+不要执行 SQL。
 
-要求：
-- 不修改无关模块
-- 保持现有代码风格
-- 避免 any
-- 正确处理错误
-- 正确处理权限
-- 增加必要测试
-- 完成后运行 lint、typecheck、test、build
-- 最后总结修改文件和验证结果
+基于需求设计数据库：
+- tables
+- columns
+- types
+- PK
+- FK
+- unique
+- check
+- indexes
+- tenant field
+- audit fields
+- delete strategy
+
+另外说明：
+- cardinality
+- transaction boundary
+- migration risk
+- rollback
 ```
 
-## 6. 代码解释
+---
+
+## 五、架构计划
+
 ```text
 不要修改代码。
 
-请用适合“有 SQL/Linux 基础但编程基础较弱”的方式解释这段代码。
+请基于当前仓库设计最小实现方案：
+1. data flow
+2. modules
+3. files to modify
+4. files to create
+5. database changes
+6. permission changes
+7. API changes
+8. tests
+9. security risks
+10. rollout/rollback
 
-按以下结构：
-1. 这段代码总体做什么
-2. 输入
-3. 输出
-4. 每个函数的职责
-5. 数据流
-6. 哪些是异步操作
-7. 哪些地方可能报错
-8. 权限相关位置
-9. 我必须掌握的语法
-10. 给我 3 道变式练习
+避免过度架构。
 ```
 
-## 7. Bug 分析
-```text
-先分析，不要直接修改。
+---
 
-错误信息：
-[粘贴]
+## 六、功能实现
+
+```text
+只实现已确认的 [FEATURE]。
+
+约束：
+- 不修改无关文件
+- 不使用 any 消除错误
+- 不使用 @ts-ignore
+- 不降低现有权限/RLS
+- 不增加非必要 dependency
+- 不暴露 secret
+- 保持 tenant isolation
+
+完成后运行：
+- lint
+- typecheck
+- test
+- build
+
+最后输出修改摘要和未解决风险。
+```
+
+---
+
+## 七、代码教学
+
+```text
+不要修改代码。
+
+我是有 SQL/Linux 基础、编程基础较弱的学习者。
+
+解释：
+1. 总体目的
+2. input/output
+3. data flow
+4. functions
+5. syntax
+6. async behavior
+7. error path
+8. security
+9. alternatives
+10. exercises
+```
+
+---
+
+## 八、错误分析
+
+```text
+不要立即修复。
+
+错误：
+[ERROR]
 
 请输出：
-1. 错误发生在哪一层
-2. 最可能根因
-3. 如何验证根因
-4. 最小修复方案
-5. 是否可能影响其他功能
-6. 修复后应该跑哪些测试
+1. error category
+2. exact location
+3. likely root causes
+4. how to prove/disprove each
+5. minimal fix
+6. risks
+7. regression tests
 ```
 
-## 8. Git Diff Review
+---
+
+## 九、TypeScript 错误
+
 ```text
-不要修改代码。
+不要用 any/as/@ts-ignore 直接压掉。
 
-请 Review 当前 Git Diff。
-
-重点检查：
-1. 是否符合需求
-2. 是否修改无关文件
-3. 是否有 Breaking Change
-4. 类型问题
-5. 错误处理
-6. 数据一致性
-7. 权限
-8. 跨租户
-9. 测试覆盖
-10. 是否适合提交
-
-按 Critical / High / Medium / Low 输出。
+解释：
+- expected type
+- actual type
+- why incompatible
+- business model implication
+- correct solutions
 ```
 
-## 9. Security Review
+---
+
+## 十、Git Diff Review
+
 ```text
-不要修改代码。
+不要修改。
 
-请以 Application Security Engineer 身份进行审查。
+Review 当前 diff：
+- requirement correctness
+- unrelated changes
+- breaking changes
+- data model
+- auth
+- authorization
+- tenant isolation
+- validation
+- error handling
+- logging
+- tests
+- dependency changes
 
-重点检查：
-- Broken Access Control
-- 跨租户越权
-- SQL Injection
+按 Critical/High/Medium/Low。
+```
+
+---
+
+## 十一、安全 Review
+
+```text
+攻击者视角检查：
+- anonymous access
+- vertical privilege escalation
+- horizontal privilege escalation
+- tenant bypass
+- IDOR/BOLA
+- mass assignment
+- SQLi
 - XSS
 - CSRF
 - SSRF
-- Session
-- 敏感信息泄漏
-- 文件上传
-- Storage 权限
-- Secret
-- Rate Limit
-- Audit Log
+- file upload
+- storage policy
+- secret exposure
+- sensitive logging
+- rate limit
 
-不要只说明理论，请指出具体代码路径和攻击场景。
+每项输出：
+Attack
+Evidence
+Impact
+Fix
+Required Test
 ```
 
-## 10. 测试生成
+---
+
+## 十二、RLS Review
+
 ```text
-请先根据当前功能列出测试用例，不写测试代码。
+不要修改数据库。
+
+Review RLS：
+1. table RLS enabled?
+2. grants?
+3. SELECT using?
+4. INSERT with check?
+5. UPDATE using + with check?
+6. DELETE?
+7. tenant source trusted?
+8. service role bypass?
+9. views?
+10. allow/deny tests?
+```
+
+---
+
+## 十三、Migration Review
+
+```text
+不要执行 migration。
+
+检查：
+- data loss
+- locks
+- nullability
+- defaults
+- index cost
+- FK
+- tenant
+- RLS
+- backfill
+- compatibility
+- rollback
+```
+
+---
+
+## 十四、测试设计
+
+```text
+先只设计 test cases。
 
 分类：
-- 正常流程
-- 边界
-- 非法输入
-- 未登录
-- 无权限
-- 跨租户
-- 资源不存在
-- 服务异常
+Happy path
+Validation
+Anonymous
+Forbidden
+Wrong tenant
+Not found
+Archived/deleted
+Concurrency
+Infrastructure failure
 
-我确认后再生成测试代码。
+指出应该属于 Unit / Integration / E2E。
 ```
 
-## 11. 数据库 Migration Review
-```text
-不要执行数据库修改。
+---
 
-Review 这次 migration：
-1. 是否破坏已有数据
-2. 是否需要默认值
-3. 是否会锁表
-4. 索引是否合理
-5. 外键是否合理
-6. 是否支持回滚
-7. 多租户字段是否完整
-8. RLS 是否需要同步更新
+## 十五、性能 Review
+
+```text
+先测量，不要盲目优化。
+
+检查：
+- SQL queries
+- indexes
+- N+1
+- pagination
+- payload
+- client bundle
+- cache
+- DB connections
+- slow external call
+
+给出如何测量每个怀疑点。
 ```
 
-## 12. Production 上线前 Review
+---
+
+## 十六、Production Readiness
+
 ```text
-不要修改代码。
+把当前系统视为明天正式收费上线。
 
-把当前版本当作即将正式收费的 SaaS，
-从以下方面做上线前审查：
+按以下审查：
+Product
+AuthN
+AuthZ
+Tenant
+RLS
+Validation
+Security
+Testing
+Performance
+Migration
+CI/CD
+Monitoring
+Backup
+Restore
+Rollback
+Privacy
+Support
 
-- 功能
-- Authentication
-- Authorization
-- Multi-Tenant
-- RLS
-- 输入验证
-- 错误处理
-- Audit Log
-- Secret
-- Testing
-- Performance
-- Backup
-- Monitoring
-- Deployment
-- Rollback
-- Privacy
+输出 blocking issues。
+```
+
+---
+
+## 十七、事故分析
+
+```text
+不要先修改。
+
+Production incident:
+[INFO]
 
 输出：
-Critical blockers
-High priority
-Medium priority
-可上线后优化
+1. impact
+2. scope
+3. immediate mitigation
+4. evidence to collect
+5. root-cause hypotheses
+6. safe recovery
+7. permanent fixes
+8. regression tests
+9. postmortem outline
 ```
+
+---
+
+## 十八、Prompt 使用原则
+
+不要盲信 AI 自我报告：
+
+```text
+“tests passed”
+```
+
+必须看真实 command output。
+
+不要要求：
+
+```text
+make it secure
+```
+
+要明确安全目标。
+
+不要一次让 AI 同时：
+
+- 重构架构
+- 换 DB
+- 换 UI
+- 加支付
+- 修权限
+
+一次一个主题。
