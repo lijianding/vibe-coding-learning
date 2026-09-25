@@ -1,0 +1,14 @@
+{
+  "name": "vibe-coding-typescript-lab",
+  "private": true,
+  "scripts": {
+    "check": "tsc --noEmit",
+    "start": "tsx src/index.ts",
+    "exercise": "tsx src/exercises.ts",
+    "solution": "tsx src/solutions.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
