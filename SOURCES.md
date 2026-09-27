@@ -1,6 +1,35 @@
 # Sources：官方与主流学习资料总索引
 
-> 仓库正文已经可以独立学习；这里集中列出每个主题的原始官方资料，便于核对、追踪版本变化和继续深入。
+> 仓库正文用于完整学习；这里集中保存原始资料入口。快速演进技术和标准应以当前官方版本为准。
+
+## 软件工程 / 产品生命周期
+
+- IEEE Computer Society SWEBOK: https://www.computer.org/education/bodies-of-knowledge/software-engineering
+- Agile Manifesto: https://agilemanifesto.org/
+- Agile Principles: https://agilemanifesto.org/principles.html
+- Scrum Guide: https://scrumguides.org/scrum-guide.html
+- GOV.UK Agile Delivery: https://www.gov.uk/service-manual/agile-delivery
+- GOV.UK Discovery: https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works
+- GOV.UK Alpha: https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works
+- GOV.UK User Research: https://www.gov.uk/service-manual/user-research
+- GOV.UK User Needs: https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs
+- GOV.UK User Stories: https://www.gov.uk/service-manual/agile-delivery/writing-user-stories
+- GOV.UK Live Phase: https://www.gov.uk/service-manual/agile-delivery/how-the-live-phase-works
+- GOV.UK Sustainable Services: https://www.gov.uk/service-manual/agile-delivery/running-your-service-in-a-sustainable-way
+- GOV.UK Retiring Services: https://www.gov.uk/service-manual/agile-delivery/retiring-your-service
+- Nielsen Norman Group UX Research: https://www.nngroup.com/articles/which-ux-research-methods/
+- Martin Fowler ADR: https://martinfowler.com/bliki/ArchitectureDecisionRecord.html
+- Azure Architecture Center: https://learn.microsoft.com/en-us/azure/architecture/
+- Azure Well-Architected Framework: https://learn.microsoft.com/en-us/azure/well-architected/
+- Google SRE Books: https://sre.google/books/
+
+## Secure Software Development
+
+- NIST SSDF: https://csrc.nist.gov/projects/ssdf
+- NIST SP 800-218 Final: https://csrc.nist.gov/pubs/sp/800/218/final
+- OWASP ASVS: https://owasp.org/www-project-application-security-verification-standard/
+- OWASP WSTG: https://owasp.org/www-project-web-security-testing-guide/
+- OWASP Top 10: https://owasp.org/www-project-top-ten/
 
 ## Web 基础
 
@@ -33,7 +62,9 @@
 - Pro Git: https://git-scm.com/book/
 - GitHub Get Started: https://docs.github.com/en/get-started
 - Pull Requests: https://docs.github.com/en/pull-requests
+- GitHub Projects: https://docs.github.com/en/issues/planning-and-tracking-with-projects
 - GitHub Actions: https://docs.github.com/en/actions
+- Deployment Environments: https://docs.github.com/en/actions/concepts/workflows-and-actions/deployment-environments
 - Protected Branches: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches
 - GitHub Copilot: https://docs.github.com/en/copilot
 
@@ -50,12 +81,9 @@
 ## React
 
 - React Learn: https://react.dev/learn
-- Describing UI: https://react.dev/learn/describing-the-ui
-- Adding Interactivity: https://react.dev/learn/adding-interactivity
+- Thinking in React: https://react.dev/learn/thinking-in-react
 - Managing State: https://react.dev/learn/managing-state
 - Effects: https://react.dev/learn/synchronizing-with-effects
-- You Might Not Need an Effect: https://react.dev/learn/you-might-not-need-an-effect
-- Thinking in React: https://react.dev/learn/thinking-in-react
 
 ## Next.js
 
@@ -66,45 +94,28 @@
 - Updating Data: https://nextjs.org/docs/app/getting-started/updating-data
 - Route Handlers: https://nextjs.org/docs/app/getting-started/route-handlers
 - Caching: https://nextjs.org/docs/app/guides/caching
-- Environment Variables: https://nextjs.org/docs/app/guides/environment-variables
-- Learn: https://nextjs.org/learn
 
 ## Supabase
 
 - Docs: https://supabase.com/docs
 - Database: https://supabase.com/docs/guides/database
 - Auth: https://supabase.com/docs/guides/auth
-- Server-side Auth: https://supabase.com/docs/guides/auth/server-side
 - RLS: https://supabase.com/docs/guides/database/postgres/row-level-security
 - Securing API: https://supabase.com/docs/guides/api/securing-your-api
 - Storage: https://supabase.com/docs/guides/storage
-- Storage Access Control: https://supabase.com/docs/guides/storage/security/access-control
 - Production Checklist: https://supabase.com/docs/guides/deployment/going-into-prod
-- Product Security: https://supabase.com/docs/guides/security/product-security
 
 ## Testing
 
 - Vitest: https://vitest.dev/guide/
 - Playwright: https://playwright.dev/docs/intro
 
-## Security
-
-- OWASP ASVS: https://owasp.org/www-project-application-security-verification-standard/
-- OWASP Top 10: https://owasp.org/www-project-top-ten/
-- OWASP WSTG: https://owasp.org/www-project-web-security-testing-guide/
-- NIST SSDF: https://csrc.nist.gov/projects/ssdf
-- NIST SP 800-218: https://csrc.nist.gov/pubs/sp/800/218/final
-
-## Docker / CI/CD / Deployment
+## Docker / CI/CD
 
 - Docker Get Started: https://docs.docker.com/get-started/
 - Dockerfile: https://docs.docker.com/reference/dockerfile/
 - Docker Compose: https://docs.docker.com/compose/
-- Volumes: https://docs.docker.com/engine/storage/volumes/
-- Networking: https://docs.docker.com/engine/network/
 - GitHub Actions: https://docs.github.com/en/actions
-- Node CI with GitHub Actions: https://docs.github.com/en/actions/tutorials/build-and-test-code/nodejs
-- Vercel Next.js: https://vercel.com/docs/frameworks/full-stack/nextjs
 
 ## Performance
 
@@ -115,12 +126,10 @@
 ## SaaS Billing
 
 - Stripe Billing: https://docs.stripe.com/billing
-- Subscriptions: https://docs.stripe.com/billing/subscriptions/overview
-- Usage-based Billing: https://docs.stripe.com/billing/subscriptions/usage-based
-- Webhooks: https://docs.stripe.com/webhooks
-- Customer Portal: https://docs.stripe.com/customer-management
+- Stripe Subscriptions: https://docs.stripe.com/billing/subscriptions/overview
+- Stripe Webhooks: https://docs.stripe.com/webhooks
 
-## Healthcare / Compliance Foundations
+## Healthcare / Compliance
 
 - HHS HIPAA Security Rule: https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html
 - HHS HIPAA Cloud Computing: https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html
@@ -136,10 +145,7 @@
 
 ## 使用建议
 
-每学完一个章节：
-
-1. 先只看仓库教材正文。
-2. 完成练习。
-3. 再打开官方链接核对原始定义。
-4. 如果官方行为与仓库教材有差异，以当前官方文档为准。
-5. 对 Next.js、Supabase、Node.js 等快速演进技术，定期重新查看官方文档。
+1. 先学习仓库正文。
+2. 完成实验和模板实践。
+3. 再打开官方资料核对定义和最新行为。
+4. 标准/框架有更新时，以当前官方文档为准。
