@@ -2,52 +2,59 @@
 
 这是一个面向 **医疗软件实施工程师 / 项目经理** 的系统化自学仓库。
 
-目标不是让你只学会“让 AI 生成页面”，而是从零建立：
+现在仓库已经包含两条完整主线：
 
 ```text
-Web 基础
-→ JavaScript / TypeScript
-→ Git
-→ HTTP/API
-→ PostgreSQL
-→ React
-→ Next.js
-→ Supabase
-→ Auth / RBAC / Multi-Tenant / RLS
-→ Testing / Security
-→ Architecture
-→ Docker / CI/CD / Production
-→ Performance
-→ SaaS Commercialization
-→ Healthcare Compliance Foundations
-→ 完整商用 SaaS 实战
+技术能力
++
+软件工程 / 产品落地能力
+```
+
+技术主线解决：
+
+> 怎么写软件？
+
+软件工程主线解决：
+
+> 为什么做、做什么、如何验证需求、怎么设计、怎么组织交付、怎么上线、怎么持续改进？
+
+---
+
+# 总学习地图
+
+```text
+Web / Programming Fundamentals
+↓
+Full-stack SaaS Stack
+↓
+Security / Testing / Production
+↓
+Software Architecture
+↓
+Product Discovery
+↓
+Requirements Engineering
+↓
+Product Design
+↓
+Architecture / NFR
+↓
+Planning / Risk
+↓
+Delivery / Change
+↓
+QA / UAT
+↓
+Release / Go-Live
+↓
+Metrics / Feedback
+↓
+Maintenance / Retirement
 ```
 
 ---
 
-## 学习目标
-
-完成后，你应该能够借助 AI Coding Agent：
-
-- 阅读和修改真实项目代码
-- 设计 SaaS 数据库
-- 设计 API
-- 完成 React / Next.js 全栈功能
-- 实现 Authentication / Authorization
-- 实现 Multi-Tenant 与 RLS
-- 建立 Audit Log
-- 写 Unit / Integration / E2E Test
-- 做基本 Security Review
-- 使用 Docker / GitHub Actions
-- 部署 Staging / Production
-- 做 Monitoring / Backup / Restore
-- 分析性能
-- 设计 Plan / Subscription / Entitlement
-- 理解医疗 SaaS 的数据与合规边界
-
----
-
-# 课程目录
+# 技术课程
 
 ## 第一阶段：软件开发基础
 
@@ -60,7 +67,7 @@ Web 基础
 7. [Git 与 GitHub](docs/07-git-github.md)
 8. [HTTP / REST API / JSON](docs/08-http-api.md)
 
-## 第二阶段：全栈 SaaS 主技术栈
+## 第二阶段：全栈 SaaS
 
 9. [PostgreSQL 与数据库设计](docs/09-postgresql-database-design.md)
 10. [React](docs/10-react.md)
@@ -76,7 +83,7 @@ Web 基础
 17. [AI Coding Prompt 手册](docs/17-ai-prompts.md)
 18. [Production Readiness Checklist](docs/18-production-checklist.md)
 
-## 第四阶段：补齐真实商用能力
+## 第四阶段：商用能力
 
 19. [Node.js 与运行时](docs/19-nodejs-runtime.md)
 20. [软件架构](docs/20-software-architecture.md)
@@ -87,32 +94,139 @@ Web 基础
 
 ---
 
-# 官方源资料总索引
+# 软件工程：从需求分析到产品落地
 
-查看：
+专门入口：
+
+[SOFTWARE-ENGINEERING.md](SOFTWARE-ENGINEERING.md)
+
+## 第五阶段：完整软件工程生命周期
+
+25. [软件工程全生命周期](docs/25-software-engineering-lifecycle.md)
+26. [产品发现与问题定义](docs/26-product-discovery.md)
+27. [需求工程](docs/27-requirements-engineering.md)
+28. [产品设计与原型验证](docs/28-product-design-prototyping.md)
+29. [架构设计与非功能需求](docs/29-architecture-and-nfr.md)
+30. [计划、估算、依赖与风险](docs/30-planning-estimation-risk.md)
+31. [研发交付与变更管理](docs/31-delivery-change-management.md)
+32. [质量保证与 UAT](docs/32-quality-assurance-uat.md)
+33. [Release、Go-Live 与运营交接](docs/33-release-go-live-operations.md)
+34. [产品指标、反馈与持续迭代](docs/34-product-metrics-feedback-iteration.md)
+35. [维护、治理与产品退役](docs/35-maintenance-retirement-governance.md)
+
+---
+
+# 软件工程模板包
+
+[templates/software-engineering/README.md](templates/software-engineering/README.md)
+
+包含 20 套可直接复用模板：
+
+- Product Vision
+- Discovery Plan
+- Problem Statement
+- PRD
+- SRS
+- User Story
+- NFR Checklist
+- Architecture Design Spec
+- ADR
+- Risk Register
+- Change Request
+- Traceability Matrix
+- Test Plan
+- UAT Plan
+- Release / Go-Live Plan
+- Product Metrics Plan
+- Runbook
+- Incident Postmortem
+- Retirement Plan
+- Definition of Ready / Done
+
+---
+
+# 完整案例
+
+[Project Archive：从问题到上线完整案例](examples/software-engineering-project-flow.md)
+
+这份案例把下面流程真正串起来：
+
+```text
+Problem
+↓
+User Need
+↓
+User Story
+↓
+Functional Requirement
+↓
+NFR
+↓
+Data / Architecture
+↓
+Permission
+↓
+Implementation
+↓
+Testing
+↓
+UAT
+↓
+Release
+↓
+Monitoring
+↓
+Outcome
+```
+
+---
+
+# 实践与实验
+
+- [实践总路线](PRACTICE.md)
+- [Labs 实验中心](labs/README.md)
+- [毕业项目实施手册](projects/medical-implementation-saas/README.md)
+
+学习顺序：
+
+```text
+读教材
+→ 做实验
+→ 做需求/架构/测试文档
+→ AI 辅助实现
+→ Review
+→ UAT
+→ Release
+→ Observe
+→ Iterate
+```
+
+---
+
+# 官方源资料
 
 [SOURCES.md](SOURCES.md)
 
-这里集中包含：
+资料来源包含：
 
+- IEEE / SWEBOK
+- Agile Manifesto
+- Scrum Guide
+- GOV.UK Service Manual
+- NIST SSDF
+- OWASP
+- Google SRE
+- GitHub
 - MDN
 - TypeScript
 - Node.js
-- Git/GitHub
 - PostgreSQL
 - React
 - Next.js
 - Supabase
-- Vitest
-- Playwright
-- OWASP
-- NIST
 - Docker
-- Vercel
 - Stripe
 - HHS
-
-所有章节也在正文开头或结尾直接附带官方源链接。
 
 ---
 
@@ -144,7 +258,7 @@ Web 基础
 
 ## Medical Implementation SaaS
 
-功能包括：
+功能：
 
 - Organization
 - Users / Members
@@ -167,156 +281,46 @@ Web 基础
 
 ---
 
-# 每章学习方法
+# 最终能力目标
 
-建议固定执行：
+完成整套路线后，你应能够独立完成：
 
 ```text
-阅读教材
+发现真实问题
 ↓
-理解概念
+用户研究
 ↓
-手工完成最小练习
+需求定义
 ↓
-用 AI 辅助扩展
+PRD/SRS
 ↓
-运行代码
+NFR
 ↓
-查看错误
+架构
 ↓
-看 git diff
+风险与计划
 ↓
-运行测试
+研发
 ↓
-Review
+测试
 ↓
-Commit
+UAT
 ↓
-完成章节验收
+Go-Live
+↓
+监控
+↓
+指标
+↓
+迭代
+↓
+维护/退役
 ```
 
-不要只“看懂”。
-
-必须做到：
-
-> 能运行、能修改、能解释、能测试。
-
----
-
-# AI 代码阅读的 10 个问题
-
-看到任何 AI 代码，都问：
-
-1. 它解决什么需求？
-2. 输入是什么？
-3. 输出是什么？
-4. 数据从哪里来？
-5. 数据写到哪里？
-6. 当前用户是谁？
-7. 权限在哪里判断？
-8. 什么情况下失败？
-9. 有哪些测试？
-10. 有哪些安全风险？
-
----
-
-# 商用 SaaS 的最低工程边界
-
-页面能打开远远不够。
-
-至少需要：
-
-- Authentication
-- Authorization
-- Tenant Isolation
-- Validation
-- Audit
-- Error Handling
-- Tests
-- Security
-- Migration
-- Monitoring
-- Backup
-- Restore
-- Rollback
-- CI/CD
-- Privacy
-- Support
-
-详见：
-[Production Readiness Checklist](docs/18-production-checklist.md)
-
----
-
-# 完成课程后的能力验收
-
-你应该能够独立解释并实现：
-
-- Browser → HTTP → Server → DB 的数据流
-- JavaScript Promise / async-await
-- TypeScript 类型系统
-- Git Branch / PR / Diff / Revert
-- REST API
-- PostgreSQL Constraint / Index / Transaction / MVCC
-- React Props / State / Effect
-- Next.js Server / Client Boundary
-- Supabase Auth / Storage
-- RBAC
-- Multi-Tenant
-- RLS
-- Audit Log
-- Unit / Integration / E2E
-- OWASP 核心风险
-- Docker
-- GitHub Actions
-- Monitoring
-- Backup / RPO / RTO
-- Architecture Layering
-- Performance Diagnosis
-- SaaS Subscription Lifecycle
-- Healthcare Data Boundary
-
----
-
-# 重要提醒
-
-本仓库是学习资料和工程实践指南，不等同于：
-
-- 法律意见
-- 合规认证
-- 安全审计报告
-- 医疗器械监管结论
-
-涉及真实患者数据、临床决策、处方、诊断、医疗器械功能时，需要进一步做专项合规与安全评估。
+并且能借助 AI Coding Agent 高效实现，而不是把产品决策和工程责任完全交给 AI。
 
 ---
 
 # 学习原则
 
-> AI 可以帮你高效地“写”，但你必须学会判断“写得对不对、安不安全、能不能上线”。
-
-
----
-
-# 实践与实验
-
-除了教材正文，本仓库还包含可运行实验和毕业项目：
-
-- [实践总路线](PRACTICE.md)
-- [Labs 实验中心](labs/README.md)
-- [毕业项目实施手册](projects/medical-implementation-saas/README.md)
-
-推荐顺序：
-
-```text
-读 docs
-→ 做 labs
-→ 完成 exercises
-→ 对照 solutions
-→ Git Commit
-→ 再进入下一章
-```
-
-真正掌握的标准不是“看懂”，而是：
-
-> 能运行、能修改、能解释、能测试、能发现安全边界。
+> AI 可以帮你高效地“写”，但你必须学会决定“为什么写、写什么、如何证明它正确、是否能安全上线，以及上线后是否真的产生价值”。
