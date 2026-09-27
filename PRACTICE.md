@@ -1,286 +1,196 @@
-# 实践路线：从“看懂”到“会做”
+# 实践路线：从“看懂”到“完整交付产品”
 
-本仓库现在采用四层学习结构：
+仓库实践已经扩展为五层：
 
 ```text
-教材正文 docs/
+教材 docs/
 ↓
-可运行实验 labs/
+实验 labs/
 ↓
-练习与参考答案
+软件工程模板 templates/
+↓
+完整案例 examples/
 ↓
 毕业项目 projects/
 ```
 
-## 学习规则
-
-每一章按下面顺序：
-
-1. 阅读对应 `docs/` 教材。
-2. 进入对应 `labs/`。
-3. 先做练习，不看答案。
-4. 运行代码并观察结果。
-5. 主动制造错误，再自己排查。
-6. 对照参考答案。
-7. 用 Git Commit 保存学习成果。
-8. 完成章节验收后进入下一章。
-
 ---
 
-# 实验路线
+# 技术实践
 
-## Lab 00：HTML/CSS Dashboard
+实验中心：
 
-路径：
+[labs/README.md](labs/README.md)
 
-`labs/00-html-css-dashboard/`
+包含：
 
-对应：
-
-- Web 基础
 - HTML/CSS
-
-目标：
-
-- semantic HTML
-- flex
-- grid
-- responsive
-- table/form
-- accessibility basics
-
----
-
-## Lab 01：JavaScript
-
-路径：
-
-`labs/01-javascript/`
-
-目标：
-
-- 变量
-- object/array
-- map/filter/find
-- some/every/reduce
-- function
-- async/await
-- error handling
+- JavaScript
+- TypeScript
+- PostgreSQL
+- React
+- Next.js
+- Supabase / RLS
+- HTTP API
+- Testing / Security
+- Production Engineering
 
 ---
 
-## Lab 02：TypeScript
+# 软件工程实践
 
-路径：
+入口：
 
-`labs/02-typescript/`
+[SOFTWARE-ENGINEERING.md](SOFTWARE-ENGINEERING.md)
 
-目标：
+学习一个真实 Feature 时，不要直接 Coding。
 
-- interface
-- union
-- narrowing
-- generic
-- unknown
-- strict mode
+使用：
 
----
+```text
+Problem Statement
+↓
+User Need
+↓
+User Story
+↓
+Acceptance Criteria
+↓
+Functional / Non-Functional Requirements
+↓
+Architecture / Data / Permission
+↓
+Risk / Plan
+↓
+Implementation
+↓
+Test
+↓
+UAT
+↓
+Release
+↓
+Metric
+```
 
-## Lab 03：PostgreSQL
+模板：
 
-路径：
-
-`labs/03-postgresql/`
-
-目标：
-
-- schema
-- seed
-- query
-- FK
-- constraint
-- index
-- aggregation
-- tenant-aware data model
-
----
-
-## Lab 04：React Dashboard
-
-路径：
-
-`labs/04-react-dashboard/`
-
-目标：
-
-- component
-- props
-- state
-- event
-- filter
-- controlled form
-- render states
+[templates/software-engineering/README.md](templates/software-engineering/README.md)
 
 ---
 
-## Lab 05：Next.js Project Console
+# 推荐完整练习
 
-路径：
+选择毕业项目中的一个 Feature，例如：
 
-`labs/05-nextjs-project-console/`
+```text
+Archive Project
+```
 
-目标：
+然后严格完成：
 
-- App Router
-- Server Component
-- Client Component
-- Route
-- data access
-- form mutation
-- loading/error
+1. Problem Statement
+2. User Story
+3. Acceptance Criteria
+4. SRS Requirements
+5. NFR
+6. Architecture Impact
+7. ADR
+8. Risk Register
+9. Implementation Plan
+10. AI Coding
+11. Tests
+12. Traceability
+13. UAT
+14. Go-Live Plan
+15. Metrics
 
----
+参考完整案例：
 
-## Lab 06：Supabase Multi-Tenant
-
-路径：
-
-`labs/06-supabase-multitenant/`
-
-目标：
-
-- multi-tenant schema
-- RLS
-- policies
-- allow/deny cases
-- cross-tenant tests
-
----
-
-## Lab 07：HTTP API
-
-路径：
-
-`labs/07-http-api/`
-
-目标：
-
-- Request/Response
-- Method
-- URL
-- Status
-- JSON
-- validation
-- error contract
-
----
-
-## Lab 08：Testing + Security
-
-路径：
-
-`labs/08-testing-security/`
-
-目标：
-
-- unit test
-- permission tests
-- deny cases
-- cross-tenant cases
-- IDOR
-- mass assignment
-- XSS thinking
-
----
-
-## Lab 09：Production Engineering
-
-路径：
-
-`labs/09-production-engineering/`
-
-目标：
-
-- Dockerfile
-- CI
-- backup/restore
-- incident runbook
-- production thinking
+[examples/software-engineering-project-flow.md](examples/software-engineering-project-flow.md)
 
 ---
 
 # 毕业项目
 
-路径：
+[projects/medical-implementation-saas/README.md](projects/medical-implementation-saas/README.md)
 
-`projects/medical-implementation-saas/`
+不要一次生成整个系统。
 
-项目采用 Milestone 方式实现：
+按 Milestone 做：
 
 ```text
-Initialize
+Discovery
 ↓
-Static UI
+Product Definition
+↓
+Architecture
+↓
+Initialize
 ↓
 Database
 ↓
-Authentication
+Auth
 ↓
 CRUD
 ↓
 Multi-Tenant
 ↓
-RBAC
+RBAC/RLS
 ↓
-RLS
+Business Modules
 ↓
-Task/Issue
+Tests
 ↓
-Audit
-↓
-Storage
-↓
-Testing
-↓
-Security
+UAT
 ↓
 CI/CD
 ↓
-Staging
+Go-Live
 ↓
-Production
+Operate
 ↓
-Monitoring/Restore
+Measure
 ```
 
 ---
 
-# 每次实验的 Git 流程
+# 每个 Feature 的 Git 流程
 
 ```bash
+git switch -c feat/feature-name
 git status
 git diff
 git add .
-git commit -m "learn: complete lab xx"
+git commit -m "feat: implement feature name"
 ```
 
-每个 Lab 独立 Commit。
+PR 前必须：
+
+- Acceptance Criteria checked
+- Tests passed
+- Security/tenant reviewed
+- Documentation updated
 
 ---
 
-# 自我验收标准
+# 真正掌握的标准
 
-不要只问：
+不是：
 
-> 我看懂了吗？
+> 我看懂这章了。
 
-而要问：
+而是：
 
-- 我能运行吗？
-- 我能改吗？
-- 我能解释为什么吗？
-- 我能制造一个错误并修复吗？
-- 我能写测试证明它正确吗？
-- 我能指出安全边界吗？
+- 我能解释 Problem 吗？
+- 我能写可测试 Requirement 吗？
+- 我能设计 NFR 吗？
+- 我能说明架构取舍吗？
+- 我能识别 Risk 吗？
+- 我能实现吗？
+- 我能写 Allow/Deny Tests 吗？
+- 我能组织 UAT 吗？
+- 我能准备 Go-Live/Rollback 吗？
+- 我能定义上线后的 Outcome Metric 吗？
 
-满足这些，才算真正掌握。
+做到这些，才真正从“会写代码”进入“会交付产品”。
